@@ -1,0 +1,14 @@
+body { 
+    padding-top:50px; 
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+.img-container img {
+    width: 80%;
+    margin: 10rem 0;
+}
