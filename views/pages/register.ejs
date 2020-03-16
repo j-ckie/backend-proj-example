@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ("../partials/head.ejs") %>
+</head>
+
+<body class="container">
+    <header>
+        <%- include ("../partials/header.ejs") %>
+    </header>
+    <main>
+        <div class="jumbotron">
+            <h1>Register</h1>
+            <div class="register">
+                <form method="POST" action="/register">
+                    <input type="text" name="email" placeholder="email" />
+                    <input type="text" name="name" placeholder="name" />
+                    <input type="password" name="password" placeholder="password" />
+                    <button>Submit</button>
+                </form>
+                <span class="small-text">Already have an account? Login <a href="/login">here</a></span>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

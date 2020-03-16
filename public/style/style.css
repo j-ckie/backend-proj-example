@@ -12,3 +12,7 @@ body {
     width: 80%;
     margin: 10rem 0;
 }
+
+.small-text {
+    font-size: 1rem;
+}
