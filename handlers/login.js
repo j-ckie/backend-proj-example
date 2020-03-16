@@ -1,13 +1,19 @@
 const models = require("../models");
 const express = require("express");
+const app = express();
 const router = express.Router();
 const bcrypt = require("bcrypt");
+
+const session = require("express-session");
+const cookieParser = require("cookie-parser")
+require("dotenv").config();
 
 router.use(express.urlencoded());
 
 router.get("/", (req, res) => res.render("login"));
 
 router.post("/", (req, res) => {
+    console.log("logging in user... ")
     let email = req.body.email,
         password = req.body.password;
 
@@ -22,9 +28,8 @@ router.post("/", (req, res) => {
                     .then(success => {
                         if (success) {
                             if (req.session) {
-                                req.session.email = persistUser.email;
+                                req.session.email = email;
                                 req.session.name = persistUser.name;
-                                req.session.id = persistUser.id;
                             }
                             res.redirect("/");
                         } else {
