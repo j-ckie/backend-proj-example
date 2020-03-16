@@ -55,22 +55,36 @@ function authenticate(req, res, next) {
 // use res.render to load up an ejs view file
 // index page 
 app.get('/', (req, res) => {
-    res.render('pages/index')
+    res.render('pages/index', {
+        confirmed: req.session.email
+    })
 });
-app.get('/about', (req, res) => res.render('pages/about'));
-app.get('/register', (req, res) => res.render('pages/register'));
+app.get('/about', (req, res) => res.render('pages/about', {
+    confirmed: req.session.email
+}));
+app.get('/register', (req, res) => res.render('pages/register', {
+    confirmed: req.session.email
+}));
 app.get('/login', (req, res) => {
     console.log(req.session)
-    res.render('pages/login')
+    res.render('pages/login', {
+        confirmed: req.session.email
+    })
 });
 
 app.get("/test", authenticate, (req, res) => {
-    res.render("pages/test")
+    console.log(req);
+    res.render("pages/test", {
+        confirmed: req.session.email
+    })
 })
 
 app.use("/register", register);
 app.use("/login", login);
-
+app.get("/logout", authenticate, (req, res) => {
+    req.session.destroy();
+    res.redirect("/")
+})
 
 
 app.listen(PORT, () => {

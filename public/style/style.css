@@ -16,3 +16,14 @@ body {
 .small-text {
     font-size: 1rem;
 }
+
+.logout {
+    border: 0;
+    margin: 15px;
+    background-color: #F8F8F8;
+    color: #777777;
+}
+
+.logout:hover {
+    color: #000;
+}

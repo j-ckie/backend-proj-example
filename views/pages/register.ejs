@@ -7,7 +7,11 @@
 
 <body class="container">
     <header>
-        <%- include ("../partials/header.ejs") %>
+        <% if (confirmed === undefined) { %>
+        <%- include ("../partials/unAuth.ejs") %>
+        <% } else { %>
+        <%- include ("../partials/authHeader.ejs") %>
+        <% } %>
     </header>
     <main>
         <div class="jumbotron">
