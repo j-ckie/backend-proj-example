@@ -1,23 +1,23 @@
 {
     "development": {
-        "username": "yqjytzrs",
-        "password": "pNeWgHjyq6d0vRhswXhMm3CgP0fGUg_8",
-        "database": "yqjytzrs",
-        "host": "drona.db.elephantsql.com",
+        "username": "MASTER USERNAME",
+        "password": "MASTER PASSWORD",
+        "database": "MASTER USERNAME",
+        "host": "AWS ENDPOINT",
         "dialect": "postgres"
     },
     "test": {
-        "username": "yqjytzrs",
-        "password": "pNeWgHjyq6d0vRhswXhMm3CgP0fGUg_8",
-        "database": "yqjytzrs",
-        "host": "drona.db.elephantsql.com",
-        "dialect": "mysql"
+        "username": "MASTER USERNAME",
+        "password": "MASTER PASSWORD",
+        "database": "MASTER USERNAME",
+        "host": "AWS ENDPOINT",
+        "dialect": "postgres"
     },
     "production": {
-        "username": "yqjytzrs",
-        "password": "pNeWgHjyq6d0vRhswXhMm3CgP0fGUg_8",
-        "database": "yqjytzrs",
-        "host": "drona.db.elephantsql.com",
-        "dialect": "mysql"
+        "username": "MASTER USERNAME",
+        "password": "MASTER PASSWORD",
+        "database": "MASTER USERNAME",
+        "host": "AWS ENDPOINT",
+        "dialect": "postgres"
     }
 }
