@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ("../partials/head.ejs") %>
+</head>
+
+<body class="container">
+    <header>
+        <% if (confirmed === undefined) { %>
+        <%- include ("../partials/unAuth.ejs") %>
+        <% } else { %>
+        <%- include ("../partials/authHeader.ejs") %>
+        <% } %>
+    </header>
+    <main>
+        <div class="jumbotron">
+            <h1>Dashboard</h1>
+            <!-- TABS -->
+
+
+
+            <div id="tabs-div">
+
+                <button id="tab1ID">Tab 1</button>
+                <button id="tab2ID">Tab 2</button>
+                <button id="tab3ID">Tab 3</button>
+            </div>
+
+            <div id="Tab1" class="tab">
+                <p>Tab 1 text...</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat corporis mollitia odio ipsa, sequi,
+                    nesciunt dicta soluta quidem quaerat quod nobis beatae laudantium quia. Officiis optio ipsa odit
+                    unde laudantium?Qui veniam ipsum modi minima iusto facilis harum voluptate magnam rerum vel. Dolorem
+                    ipsum voluptate numquam eveniet animi, soluta enim consequuntur, iusto fugiat, quia corrupti qui
+                    maiores placeat nostrum doloribus.</p>
+            </div>
+            <div id="Tab2" class="tab" style="display:none">
+                <p>Tab 2 text...</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, commodi deleniti praesentium numquam
+                    delectus nostrum. Animi nisi corporis, odio aut odit praesentium in consequuntur vitae maxime a
+                    molestiae voluptas suscipit?</p>
+            </div>
+            <div id="Tab3" class="tab" style="display:none">
+                <p>Tab 3 text...</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, eligendi iusto, tempora dolorum
+                    accusamus sint libero, consequuntur quis vitae incidunt harum eveniet vel mollitia sit sed neque
+                    dicta nobis cumque?
+                    Sint molestias molestiae quas ipsa, corporis neque culpa quibusdam ex aliquid aut dolores assumenda
+                    ipsum quia ad laudantium. Eos quae sequi expedita illo beatae, quaerat quibusdam eaque officiis
+                    aliquid voluptate!
+                    Quae fugit iste perferendis, voluptas neque reiciendis recusandae unde maxime autem! Mollitia quidem
+                    ipsum tempore quia, numquam alias consequuntur dolore? Fugiat quam repellat repellendus, molestiae
+                    labore at ipsa fugit atque.
+                    Saepe nostrum voluptatum unde officiis quas, dolorem modi magni nulla provident doloremque
+                    veritatis, laudantium suscipit quaerat beatae eum. Dolorum nisi aliquam nam magni. Obcaecati itaque
+                    sed consectetur nesciunt nostrum pariatur.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let tab1ID = document.getElementById("tab1ID")
+        let tab2ID = document.getElementById("tab2ID")
+        let tab3ID = document.getElementById("tab3ID")
+
+        let tab1 = document.getElementById("Tab1")
+        let tab2 = document.getElementById("Tab2")
+        let tab3 = document.getElementById("Tab3")
+
+        tab2ID.addEventListener("click", () => {
+            tab1.style.display = "none"
+            tab3.style.display = "none"
+            tab2.style.display = "block"
+        })
+        tab3ID.addEventListener("click", () => {
+            tab1.style.display = "none"
+            tab3.style.display = "block"
+            tab2.style.display = "none"
+        })
+        tab1ID.addEventListener("click", () => {
+            tab1.style.display = "block"
+            tab3.style.display = "none"
+            tab2.style.display = "none"
+        })
+    </script>
+</body>
+
+</html>

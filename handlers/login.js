@@ -1,11 +1,8 @@
 const models = require("../models");
 const express = require("express");
-const app = express();
 const router = express.Router();
 const bcrypt = require("bcrypt");
 
-const session = require("express-session");
-const cookieParser = require("cookie-parser")
 require("dotenv").config();
 
 router.use(express.urlencoded());

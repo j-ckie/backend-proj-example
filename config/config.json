@@ -1,23 +1,23 @@
 {
     "development": {
-        "username": "MASTER USERNAME",
-        "password": "MASTER PASSWORD",
-        "database": "MASTER USERNAME",
-        "host": "AWS ENDPOINT",
+        "username": "postgres",
+        "password": "1happywhale",
+        "database": "postgres",
+        "host": "database-1-testing.cput43kvx6i9.us-east-2.rds.amazonaws.com",
         "dialect": "postgres"
     },
     "test": {
-        "username": "MASTER USERNAME",
-        "password": "MASTER PASSWORD",
-        "database": "MASTER USERNAME",
-        "host": "AWS ENDPOINT",
-        "dialect": "postgres"
+        "username": "postgres",
+        "password": "1happywhale",
+        "database": "postgres",
+        "host": "database-1-testing.cput43kvx6i9.us-east-2.rds.amazonaws.com",
+        "dialect": "mysql"
     },
     "production": {
-        "username": "MASTER USERNAME",
-        "password": "MASTER PASSWORD",
-        "database": "MASTER USERNAME",
-        "host": "AWS ENDPOINT",
-        "dialect": "postgres"
+        "username": "postgres",
+        "password": "1happywhale",
+        "database": "postgres",
+        "host": "database-1-testing.cput43kvx6i9.us-east-2.rds.amazonaws.com",
+        "dialect": "mysql"
     }
 }

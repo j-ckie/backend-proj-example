@@ -6,11 +6,13 @@ const cors = require("cors");
 const bodyParser = require("body-parser")
 const session = require("express-session");
 const cookieParser = require("cookie-parser")
-require("dotenv").config();
-// const models = require("./models");
-// const VIEWS_PATH = path.join(__dirname, "/views")
 
+// initialize and use .env file (THIS STORES YOUR SESSION SECRET!!)
+require("dotenv").config();
+
+// register handler
 const register = require("./handlers/register");
+// login handler
 const login = require("./handlers/login");
 
 
@@ -20,8 +22,10 @@ app.set('view engine', 'ejs');
 // set paths to run
 app.use(express.static(path.join(__dirname, "public")))
 
+// CORS middleware to allow access from front end
 app.use(cors());
 
+// session setup
 app.use(cookieParser())
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -31,24 +35,21 @@ app.use(session({
     }
 }))
 
+// body-parser setup
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 
 
-
+// AUTHENTICATED MIDDLEWARE! Use this to protect specific routes!
 function authenticate(req, res, next) {
-    // console.log("====AUTHENTICATE====")
-    // console.log(req.session)
-    if (req.session) {
-        if (req.session.email) {
-            next()
-        } else {
-            // console.log("no req.session.email")
-            res.redirect("/login")
+    if (req.session) { // if a session exists
+        if (req.session.email) { // if the session has the email information
+            next() // let the rest of the functionality run
+        } else { // if the session does NOT have the email information
+            res.redirect("/login")  // redirect to the login page
         }
-    } else {
-        // console.log("no req.session")
-        res.redirect("/login")
+    } else { // if the session does NOT exist
+        res.redirect("/login") // redirect to the login page
     }
 }
 
@@ -56,15 +57,21 @@ function authenticate(req, res, next) {
 // index page 
 app.get('/', (req, res) => {
     res.render('pages/index', {
-        confirmed: req.session.email
+        confirmed: req.session.email // passes the session email information to the EJS file! We will use this to create conditional navbars based on session state!
     })
 });
+
+// about page
 app.get('/about', (req, res) => res.render('pages/about', {
     confirmed: req.session.email
 }));
+
+// register page
 app.get('/register', (req, res) => res.render('pages/register', {
     confirmed: req.session.email
 }));
+
+// login page
 app.get('/login', (req, res) => {
     console.log(req.session)
     res.render('pages/login', {
@@ -72,18 +79,28 @@ app.get('/login', (req, res) => {
     })
 });
 
-app.get("/test", authenticate, (req, res) => {
-    console.log(req);
+app.get('/dashboard', authenticate, (req, res) => {
+    res.render('pages/dashboard', {
+        confirmed: req.session.email
+    })
+})
+
+// example of protecting a route
+app.get("/test", authenticate, (req, res) => { // adding 'authenticate' between the path and anon function protects this route!
     res.render("pages/test", {
         confirmed: req.session.email
     })
 })
 
+// trigger the 'register' functionality 
 app.use("/register", register);
+
+// trigger the 'register' functionality 
 app.use("/login", login);
-app.get("/logout", authenticate, (req, res) => {
-    req.session.destroy();
-    res.redirect("/")
+
+app.get("/logout", authenticate, (req, res) => { // on 'logout'
+    req.session.destroy(); // delete the session stored in the cookie
+    res.redirect("/") // then redirect to the homepage
 })
 
 
