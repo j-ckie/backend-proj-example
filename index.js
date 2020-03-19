@@ -28,9 +28,9 @@ app.use(cors());
 // session setup
 app.use(cookieParser())
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: process.env.SESSION_SECRET, // uses the session secret
     cookie: {
-        maxAge: 60000,
+        maxAge: 24 * 1000 * 60 * 60, 
         secure: false
     }
 }))
@@ -63,32 +63,37 @@ app.get('/', (req, res) => {
 
 // about page
 app.get('/about', (req, res) => res.render('pages/about', {
-    confirmed: req.session.email
+    confirmed: req.session.email,
+    name: req.session.name
 }));
 
 // register page
 app.get('/register', (req, res) => res.render('pages/register', {
-    confirmed: req.session.email
+    confirmed: req.session.email,
+    name: req.session.name
 }));
 
 // login page
 app.get('/login', (req, res) => {
     console.log(req.session)
     res.render('pages/login', {
-        confirmed: req.session.email
+        confirmed: req.session.email,
+        name: req.session.name
     })
 });
 
 app.get('/dashboard', authenticate, (req, res) => {
     res.render('pages/dashboard', {
-        confirmed: req.session.email
+        confirmed: req.session.email,
+        name: req.session.name
     })
 })
 
 // example of protecting a route
 app.get("/test", authenticate, (req, res) => { // adding 'authenticate' between the path and anon function protects this route!
     res.render("pages/test", {
-        confirmed: req.session.email
+        confirmed: req.session.email,
+        name: req.session.name
     })
 })
 
