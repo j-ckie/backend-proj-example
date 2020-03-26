@@ -7,15 +7,18 @@
 
 <body class="container">
     <header>
-        <% if (confirmed === undefined) { %>
+        <% if(confirmed === undefined) { %>
         <%- include ("../partials/unAuth.ejs") %>
         <% } else { %>
-        <%- include ("../partials/authHeader.ejs") %>
+        <%- include("../partials/authHeader.ejs") %>
         <% } %>
     </header>
     <main>
         <div class="jumbotron">
             <h1>Dashboard</h1>
+
+            <h2>WELCOME, <%= name %></h2>
+
             <!-- TABS -->
             <div id="tabs-div">
 
@@ -80,6 +83,8 @@
             tab3.style.display = "none"
             tab2.style.display = "none"
         })
+        console.log("THIS IS THE NAME??")
+        console.log(confirmed)
     </script>
 </body>
 

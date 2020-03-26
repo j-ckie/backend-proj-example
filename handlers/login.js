@@ -28,7 +28,9 @@ router.post("/", (req, res) => {
                                 req.session.email = email;
                                 req.session.name = persistUser.name;
                             }
-                            res.redirect("/");
+                            // res.redirect("/");
+                            // res.status(200).json({message: "It WORKS!!!!!!!!!!!"})
+                            res.status(200).redirect("/dashboard")
                         } else {
                             res.render("login", { message: "invalid information" });
                         }
@@ -40,4 +42,4 @@ router.post("/", (req, res) => {
         })
 })
 
-module.exports = router; // BLAH
+module.exports = router;

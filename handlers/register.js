@@ -4,6 +4,7 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const SALT_ROUNDS = 10;
 
+
 router.use(express.urlencoded());
 
 router.get("/", (req, res) => res.render("register"));
@@ -12,7 +13,7 @@ router.post("/", (req, res) => {
     console.log("Step 1 of user creation...")
     let email = req.body.email,
         name = req.body.name,
-        password = req.body.password
+        password = req.body.password;
 
     models.Users.findOne({
         where: {
@@ -32,7 +33,9 @@ router.post("/", (req, res) => {
                             password: hash
                         })
 
-                        newUser.save().then(() => res.redirect("/login")).catch(err => console.error(err))
+                        newUser.save().then(() => {
+                            res.redirect("/login")
+                        }).catch(err => console.error(err))
                     })
             }
         })
