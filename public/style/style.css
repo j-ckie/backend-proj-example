@@ -2,6 +2,50 @@ body {
     padding-top:50px; 
 }
 
+form {
+    display: flex;
+    flex-flow: column;
+}
+
+.fields {
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.fields button {
+    width: 10rem;
+    height: 4rem;
+    margin: 2rem auto 1rem auto;
+    border-radius: 10px;
+    background-color: #1a91f3;
+    border: none;
+    color: white;
+    transition: .2s ease-out;
+}
+
+
+.fields button:hover {
+    transition: .2s ease-in;
+    background-color: #6bbcff;
+}
+
+input {
+    border-radius: 10px;
+    border: none;
+    width: 20rem;
+    height: 4rem;
+    padding: .8rem;
+    margin: .5rem 0;
+    outline: none;
+}
+
+.jumbotron {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
 .img-container {
     display: flex;
     justify-content: center;
@@ -27,3 +71,4 @@ body {
 .logout:hover {
     color: #000;
 }
+
