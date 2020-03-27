@@ -6,5 +6,21 @@
         "host": "drona.db.elephantsql.com",
         "dialect": "postgres",
         "operatorsAliases": false
+    },
+    "test": {
+        "username": "bcdvtuxr",
+        "password": "7mSXYwaWCQ9XECOS1ZPRW1lklr_tkeKA",
+        "database": "bcdvtuxr",
+        "host": "drona.db.elephantsql.com",
+        "dialect": "postgres",
+        "operatorsAliases": false
+    },
+    "production": {
+        "username": "bcdvtuxr",
+        "password": "7mSXYwaWCQ9XECOS1ZPRW1lklr_tkeKA",
+        "database": "bcdvtuxr",
+        "host": "drona.db.elephantsql.com",
+        "dialect": "postgres",
+        "operatorsAliases": false
     }
 }
