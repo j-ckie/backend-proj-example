@@ -1,23 +1,23 @@
 {
     "development": {
-        "username": "postgres",
+        "username": "tbwupgfo",
         "password": "1happywhale",
-        "database": "postgres",
-        "host": "database-1-testing.cput43kvx6i9.us-east-2.rds.amazonaws.com",
+        "database": "SMJcOP_UvFtV43ZwYxJ4wienzGzEvbub",
+        "host": "drona.db.elephantsql.com",
         "dialect": "postgres"
     },
     "test": {
-        "username": "postgres",
+        "username": "tbwupgfo",
         "password": "1happywhale",
-        "database": "postgres",
-        "host": "database-1-testing.cput43kvx6i9.us-east-2.rds.amazonaws.com",
-        "dialect": "mysql"
+        "database": "SMJcOP_UvFtV43ZwYxJ4wienzGzEvbub",
+        "host": "drona.db.elephantsql.com",
+        "dialect": "postgres"
     },
     "production": {
-        "username": "postgres",
+        "username": "tbwupgfo",
         "password": "1happywhale",
-        "database": "postgres",
-        "host": "database-1-testing.cput43kvx6i9.us-east-2.rds.amazonaws.com",
-        "dialect": "mysql"
+        "database": "SMJcOP_UvFtV43ZwYxJ4wienzGzEvbub",
+        "host": "drona.db.elephantsql.com",
+        "dialect": "postgres"
     }
 }
