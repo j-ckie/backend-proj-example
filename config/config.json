@@ -1,23 +1,10 @@
 {
     "development": {
-        "username": "tbwupgfo",
-        "password": "1happywhale",
-        "database": "SMJcOP_UvFtV43ZwYxJ4wienzGzEvbub",
+        "username": "bcdvtuxr",
+        "password": "7mSXYwaWCQ9XECOS1ZPRW1lklr_tkeKA",
+        "database": "bcdvtuxr",
         "host": "drona.db.elephantsql.com",
-        "dialect": "postgres"
-    },
-    "test": {
-        "username": "tbwupgfo",
-        "password": "1happywhale",
-        "database": "SMJcOP_UvFtV43ZwYxJ4wienzGzEvbub",
-        "host": "drona.db.elephantsql.com",
-        "dialect": "postgres"
-    },
-    "production": {
-        "username": "tbwupgfo",
-        "password": "1happywhale",
-        "database": "SMJcOP_UvFtV43ZwYxJ4wienzGzEvbub",
-        "host": "drona.db.elephantsql.com",
-        "dialect": "postgres"
+        "dialect": "postgres",
+        "operatorsAliases": false
     }
 }
