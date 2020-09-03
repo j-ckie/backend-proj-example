@@ -4,7 +4,6 @@ const createdBy = {
     name: "Jackie Legacion"
 };
 ```
-Visit the live site <a href="https://backend-proj-example.herokuapp.com/" target="_blank">here!</a>
 
 ## Things to remember when deploying to Heroku:
 1. install the Heroku CLI globally (only needs to be done once) `npm i heroku -g`
